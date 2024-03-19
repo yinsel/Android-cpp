@@ -15,6 +15,14 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+        create("release") {
+            storeFile = file("签名文件路径")
+            storePassword = "123456"
+            keyAlias = "test"
+            keyPassword = "123456"
+        }
+    }
 
     buildTypes {
         release {
@@ -23,6 +31,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {
