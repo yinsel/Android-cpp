@@ -17,10 +17,13 @@ android {
     }
     signingConfigs {
         create("release") {
-            storeFile = file("签名文件路径")
+            storeFile = file("C:\\Users\\Yinsel\\test.jks")
             storePassword = "123456"
             keyAlias = "test"
             keyPassword = "123456"
+            enableV1Signing = true
+            enableV2Signing = true
+            enableV3Signing = true
         }
     }
 
@@ -35,8 +38,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     externalNativeBuild {
         cmake {
