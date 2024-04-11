@@ -17,7 +17,7 @@ android {
     }
     signingConfigs {
         create("release") {
-            storeFile = file("C:\\Users\\Yinsel\\test.jks")
+            storeFile = file("test.jks")
             storePassword = "123456"
             keyAlias = "test"
             keyPassword = "123456"
