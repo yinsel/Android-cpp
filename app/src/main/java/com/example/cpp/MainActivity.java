@@ -1,30 +1,24 @@
 package com.example.cpp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.example.cpp.databinding.ActivityMainBinding;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     // Used to load the 'cpp' library on application startup.
     static {
         System.loadLibrary("app2");
     }
 
-    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity);
 
         // Example of a call to a native method
-        TextView tv = binding.sampleText;
+        TextView tv = findViewById(R.id.textView);
         tv.setText(stringFromJNI2());
 
 
